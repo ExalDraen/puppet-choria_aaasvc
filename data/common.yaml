@@ -7,6 +7,9 @@ lookup_options:
     merge:
       strategy: deep
 
+choria_aaasvc::client::config:
+  aaasvc.login.url: "http://localhost:8080/choria/v1/login"
+
 choria_aaasvc::config:
   logfile: "/var/log/aaasvc/aaasvc.log"
   loglevel: info
@@ -30,11 +33,7 @@ choria_aaasvc::config:
   userlist_authenticator:
     signing_key: "/etc/aaasvc/signing_key.pem"
     validity: 1h
-    users:
-    - username: puppetadmin
-      password: "$2a$05$rYAHh8Z3l.qOGBuSstR8cuXOdP3XwuMpB6BTKlsJ/u5w3UByYoHMe"
-      acls:
-      - "*"
+    users: []
 
 choria_aaasvc::choria_config:
   plugin.security.provider: "file"

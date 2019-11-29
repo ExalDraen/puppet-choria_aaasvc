@@ -29,7 +29,7 @@ module MCollective
       end
 
       def login_url
-        url = config.pluginconf['choria.aaasvc.login.url']
+        url = config.pluginconf['login.aaasvc.login.url']
         raise('Please configure a login URL') if [nil, ''].include?(url)
 
         URI.parse(url)

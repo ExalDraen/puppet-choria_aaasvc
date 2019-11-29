@@ -2,18 +2,14 @@
 #
 # @example
 #   include choria_aaasvc::client
-class choria_aaasvc::client {
-
-  # Install the `login` application for mco to allow users to log in
-  # to AAA
-  $libdir = lookup('mcollective::libdir')
-  $file = 'application/login.rb'
-  file{"${libdir}/mcollective/${file}":
-    ensure => 'present',
-    source => "puppet:///modules/${module_name}/mcollective/${file}",
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0644',
+class choria_aaasvc::client (
+  Hash $config
+){
+  $client_files = ['application/login.rb']
+  mcollective::module_plugin{'login':
+    config_name                 => 'login',
+    client_files                => $client_files,
+    server_files                => [],
+    client_config               => $config,
   }
-
 }

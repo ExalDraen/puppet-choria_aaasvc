@@ -10,6 +10,7 @@ class choria_aaasvc::install {
   }
 
   package{$choria_aaasvc::package_name:
-    ensure => $version
+    ensure  => $version,
+    require => Class["choria::repo"],
   }
 }
