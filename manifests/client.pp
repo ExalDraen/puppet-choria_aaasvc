@@ -7,9 +7,9 @@ class choria_aaasvc::client (
 ){
   $client_files = ['application/login.rb']
   mcollective::module_plugin{'login':
-    config_name                 => 'login',
-    client_files                => $client_files,
-    server_files                => [],
-    client_config               => $config,
+    config_name   => 'login',
+    client_files  => $client_files,
+    server_files  => [],
+    client_config => $config,
   }
 }

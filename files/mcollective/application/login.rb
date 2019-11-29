@@ -1,5 +1,6 @@
 module MCollective
   class Application
+    # Basic application for logging in to Choria AAA
     class Login < Application
       description 'Choria Orchestrator AAA Login'
 
@@ -48,13 +49,8 @@ module MCollective
 
         resp = http.request(post)
 
-        login = {}
-
-        if resp.code == '200'
-          login = JSON.parse(resp.body)
-        else
-          raise('Could not login: %s: %s' % [resp.code, resp.body])
-        end
+        raise('Could not login: %s: %s' % [resp.code, resp.body]) if resp.code != '200'
+        login = JSON.parse(resp.body)
 
         raise(login['error']) if login['error']
 
