@@ -15,7 +15,6 @@ Installs and configure the Choria centralised AAA service
         - [Beginning with choria_aaasvc](#beginning-with-choriaaaasvc)
     - [Usage](#usage)
         - [Configure MCO client to use AAA svc](#configure-mco-client-to-use-aaa-svc)
-    - [Reference](#reference)
     - [Limitations](#limitations)
     - [Development](#development)
 
@@ -29,8 +28,8 @@ orchestration system](https://choria.io).
 This service provides an alternative to the traditional certificate based
 AAA system provided in Choria and allows you to e.g. use your organization's
 SSO system to authenticate users.
-For more background see the [choria blog](https://choria.io/blog/post/2019/01/23/central_aaa/) on this topic.
 
+For more background see the [choria blog](https://choria.io/blog/post/2019/01/23/central_aaa/) on this topic.
 
 
 ## Setup
@@ -42,7 +41,7 @@ For more background see the [choria blog](https://choria.io/blog/post/2019/01/23
 
 ### Setup Requirements
 
-To configure
+TBD
 
 ### Beginning with choria_aaasvc
 
