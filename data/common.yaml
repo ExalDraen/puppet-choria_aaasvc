@@ -1,1 +1,14 @@
 ---
+choria_aaasvc::config:
+  foo: 'bar'
+
+choria_aaasvc::choria_config:
+  foo: 'bar'
+
+choria_aaasvc::config_file: '/etc/aaasvc/config.json'
+choria_aaasvc::choria_config_file: '/etc/aaasvc/choria.conf'
+
+choria_aaasvc::ensure: "present"
+choria_aaasvc::version: "0.2.0"
+choria_aaasvc::package_name: "aaasvc"
+choria_aaasvc::service_name: "aaasvc"
