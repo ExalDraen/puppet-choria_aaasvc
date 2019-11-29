@@ -4,14 +4,22 @@ Installs and configure the Choria centralised AAA service
 
 #### Table of Contents
 
-1. [Description](#description)
-2. [Setup - The basics of getting started with choria_aaasvc](#setup)
-    * [What choria_aaasvc affects](#what-choria_aaasvc-affects)
-    * [Setup requirements](#setup-requirements)
-    * [Beginning with choria_aaasvc](#beginning-with-choria_aaasvc)
-3. [Usage - Configuration options and additional functionality](#usage)
-4. [Limitations - OS compatibility, etc.](#limitations)
-5. [Development - Guide for contributing to the module](#development)
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
+- [choria_aaasvc](#choriaaaasvc)
+    - [-](#-)
+    - [Description](#description)
+    - [Setup](#setup)
+        - [What choria_aaasvc affects](#what-choriaaaasvc-affects)
+        - [Setup Requirements](#setup-requirements)
+        - [Beginning with choria_aaasvc](#beginning-with-choriaaaasvc)
+    - [Usage](#usage)
+        - [Configure MCO client to use AAA svc](#configure-mco-client-to-use-aaa-svc)
+    - [Reference](#reference)
+    - [Limitations](#limitations)
+    - [Development](#development)
+
+<!-- markdown-toc end -->
 
 ## Description
 
@@ -30,20 +38,27 @@ For more background see the [choria blog](https://choria.io/blog/post/2019/01/23
 ### What choria_aaasvc affects
 
 * The `aaasvc` package and it's configuration
-* Warnings or other important notices.
+* Files in the `mcollective` libdir.
 
 ### Setup Requirements
 
-TBD.
-
+To configure
 
 ### Beginning with choria_aaasvc
 
-The very basic steps needed for a user to get the module up and running. This can include setup steps, if necessary, or it can be an example of the most basic use of the module.
+TBD
 
 ## Usage
 
-Include usage examples for common use cases in the **Usage** section. Show your users how to use your module to solve problems, and be sure to include code examples. Include three to five examples of the most important or common tasks a user can accomplish with your module. Show users how to accomplish more complex tasks that involve different types, classes, and functions working in tandem.
+### Configure MCO client to use AAA svc
+
+* Add the `choria_aaasvc::client` class
+* Configure the MCO client to use the AAA service
+```conf
+plugin.choria.security.request_signer.url = http://localhost:8080/choria/v1/sign
+plugin.choria.security.request_signer.token_environment = CHORIA_TOKEN
+plugin.choria.security.request_signer.force = 1
+```
 
 ## Reference
 
