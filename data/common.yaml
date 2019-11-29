@@ -1,9 +1,46 @@
 ---
+lookup_options:
+  choria_aaasvc::config:
+    merge:
+      strategy: deep
+  choria_aaasvc::choria_config:
+    merge:
+      strategy: deep
+
 choria_aaasvc::config:
-  foo: 'bar'
+  logfile: "/var/log/aaasvc/aaasvc.log"
+  loglevel: info
+  choria_config: "/etc/aaasvc/choria.conf"
+  authenticator: userlist
+  auditors:
+  - logfile
+  authorizer: actionlist
+  signer: basicjwt
+  port: 8080
+  monitor_port: 8081
+  site: default
+  tls_certificate: "/etc/aaasvc/tls_cert.pem"
+  tls_key: "/etc/aaasvc/tls_key.pem"
+  tls_ca: "/etc/aaasvc/tls_ca.pem"
+  basicjwt_signer:
+    signing_certificate: "/etc/aaasvc/signing_pub.pem"
+    max_validity: 24h
+  logfile_auditor:
+    logfile: "/var/log/aaasvc/audit.log"
+  userlist_authenticator:
+    signing_key: "/etc/aaasvc/signing_key.pem"
+    validity: 1h
+    users:
+    - username: puppetadmin
+      password: "$2a$05$rYAHh8Z3l.qOGBuSstR8cuXOdP3XwuMpB6BTKlsJ/u5w3UByYoHMe"
+      acls:
+      - "*"
 
 choria_aaasvc::choria_config:
-  foo: 'bar'
+  plugin.security.provider: "file"
+  plugin.security.file.certificate: "/etc/aaasvc/signer/choria_signer.privileged.mcollective_cert.pem"
+  plugin.security.file.key: "/etc/aaasvc/signer/choria_signer.privileged.mcollective_key.pem"
+  plugin.security.file.ca: "/etc/aaasvc/signer/choria_signer_privileged_ca.pem"
 
 choria_aaasvc::config_file: '/etc/aaasvc/config.json'
 choria_aaasvc::choria_config_file: '/etc/aaasvc/choria.conf'
