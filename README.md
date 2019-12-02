@@ -1,5 +1,7 @@
 # choria_aaasvc
 
+[![Build Status](https://travis-ci.com/ExalDraen/puppet-choria_aaasvc.svg?branch=master)](https://travis-ci.com/ExalDraen/puppet-choria_aaasvc)
+
 Installs and configure the Choria centralised AAA service
 
 #### Table of Contents
