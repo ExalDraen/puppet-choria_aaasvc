@@ -43,11 +43,19 @@ For more background see the [choria blog](https://choria.io/blog/post/2019/01/23
 
 ### Setup Requirements
 
-TBD
+You will need:
+
+* An up-to-date choria deployment (choria >= 0.13.1)
+* Three sets of certificates for use by aaasvc, as described in the [aaasvc documentation](https://github.com/choria-io/aaasvc#general-configuration)
 
 ### Beginning with choria_aaasvc
 
-TBD
+1. Add the `choria_aaasvc` class to a host
+2. Provision the certificates on the host - this is currently not handled by the module and must be done out of band.
+3. Run puppet on the host
+4. Verify the `aaasvc` installation using the [method described in the docs](https://github.com/choria-io/aaasvc#testing-login)
+
+*Note*: the host you install `choria_aaasvc` on must be able to access the [choria release repo](https://packagecloud.io/choria/release) or another repo that has the `aaasvc` package.
 
 ## Usage
 
