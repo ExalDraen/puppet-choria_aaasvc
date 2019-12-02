@@ -3,5 +3,8 @@
 ---
 fixtures:
   forge_modules:
-     stdlib: "puppetlabs/stdlib"
-     choria: "choria/choria"
+    choria: "choria/choria"
+    cron: "puppetlabs/cron_core"
+    mcollective: "choria/mcollective"
+    stdlib: "puppetlabs/stdlib"
+    yumrepo: "puppetlabs/yumrepo_core"
