@@ -2,10 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+## Release 0.1.1
 
 **Features**
 * Travis CI build integration with badge.
+* Expand README to describe setup / getting started further.
 
 ## Release 0.1.0
 

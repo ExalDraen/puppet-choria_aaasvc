@@ -1,6 +1,6 @@
 {
   "name": "exaldraen-choria_aaasvc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "exaldraen",
   "summary": "Installs and configure the Choria centralised AAA service",
   "license": "Apache-2.0",
