@@ -12,7 +12,7 @@ class choria_aaasvc::config {
       'users_file' => $choria_aaasvc::userlist_file,
     }
   }
-  $config = $choria_aaasvc::config + $userlist_config
+  $config = deep_merge($choria_aaasvc::config, $userlist_config)
   $choria_config = $choria_aaasvc::choria_config
   $user_config = $choria_aaasvc::user_config
 
