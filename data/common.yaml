@@ -33,7 +33,6 @@ choria_aaasvc::config:
   userlist_authenticator:
     signing_key: "/etc/aaasvc/signing_key.pem"
     validity: 1h
-    users: []
 
 choria_aaasvc::choria_config:
   plugin.security.provider: "file"
@@ -41,8 +40,11 @@ choria_aaasvc::choria_config:
   plugin.security.file.key: "/etc/aaasvc/signer/choria_signer.privileged.mcollective_key.pem"
   plugin.security.file.ca: "/etc/aaasvc/signer/choria_signer_privileged_ca.pem"
 
+choria_aaasvc::user_config: []
+
 choria_aaasvc::config_file: '/etc/aaasvc/config.json'
 choria_aaasvc::choria_config_file: '/etc/aaasvc/choria.conf'
+choria_aaasvc::userlist_file: '/etc/aaasvc/users.json'
 
 choria_aaasvc::ensure: "present"
 choria_aaasvc::version: "0.3.1"

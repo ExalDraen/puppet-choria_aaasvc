@@ -2,10 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-## Release 0.1.0
+## Release 0.2.0
 
 **Features**
 * Update default `aaasvc` version to `0.3.1`.
+* Support configuration of separate users file for the userlist authenticator
+* Add more unit test coverage
 
 **Bugfixes**
 

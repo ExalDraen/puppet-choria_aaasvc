@@ -8,6 +8,9 @@
 # @param package_name The package to install
 # @param service_name Name of the choria AAA service
 # @param version The version of Choria AAA to install
+# @param user_config List of users to configure for the userlist authenticator.
+# @param userlist_file Absolute path to the file containing the list of users.
+#   Note that this is only used if using the `userlist` authenticator.
 #
 # @example
 #   include choria_aaasvc
@@ -20,6 +23,8 @@ class choria_aaasvc (
   String $package_name,
   String $service_name,
   String $version,
+  Array[Hash] $user_config,
+  Stdlib::Compat::Absolute_path $userlist_file,
 ){
   class{'choria_aaasvc::install': }
   -> class{'choria_aaasvc::config': }
