@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## Release 0.1.0
+
+**Features**
+* Update default `aaasvc` version to `0.3.1`.
+
+**Bugfixes**
+
+**Known Issues**
+* All certificates and keys need to be provisioned by hand.
+
 ## Release 0.1.1
 
 **Features**
