@@ -5,17 +5,25 @@
 
 **Classes**
 
+_Public Classes_
+
 * [`choria_aaasvc`](#choria_aaasvc): Installs, configures and manages the Choria AAA system
 * [`choria_aaasvc::client`](#choria_aaasvcclient): Configure an MCO client to interact with the Choria AAA svc
-* [`choria_aaasvc::config`](#choria_aaasvcconfig): Configures the Choria Server
-* [`choria_aaasvc::install`](#choria_aaasvcinstall): Installs the `choria-aaasvc` package
-* [`choria_aaasvc::service`](#choria_aaasvcservice): Manages the `aaasvc` service
+
+_Private Classes_
+
+* `choria_aaasvc::config`: Configures the Choria Server
+* `choria_aaasvc::install`: Installs the `choria-aaasvc` package
+* `choria_aaasvc::service`: Manages the `aaasvc` service
 
 ## Classes
 
 ### choria_aaasvc
 
 Installs, configures and manages the Choria AAA system
+
+* **See also**
+https://github.com/choria-io/aaasvc
 
 #### Examples
 
@@ -33,19 +41,19 @@ The following parameters are available in the `choria_aaasvc` class.
 
 Data type: `Stdlib::Compat::Absolute_path`
 
-The main choria AAA configuration file
+Absolute path to the main choria AAA configuration file
 
 ##### `choria_config_file`
 
 Data type: `Stdlib::Compat::Absolute_path`
 
-The AAA svc choria config file
+Absolute path to the AAA svc choria config file
 
 ##### `config`
 
 Data type: `Hash`
 
-The configuration for AAA svc
+The main configuration for AAA svc
 
 ##### `choria_config`
 
@@ -77,6 +85,19 @@ Data type: `String`
 
 The version of Choria AAA to install
 
+##### `user_config`
+
+Data type: `Array[Hash]`
+
+List of users to configure for the userlist authenticator.
+
+##### `userlist_file`
+
+Data type: `Stdlib::Compat::Absolute_path`
+
+Absolute path to the file containing the list of users.
+Note that this is only used if using the `userlist` authenticator.
+
 ### choria_aaasvc::client
 
 Configure an MCO client to interact with the Choria AAA svc
@@ -89,15 +110,13 @@ Configure an MCO client to interact with the Choria AAA svc
 include choria_aaasvc::client
 ```
 
-### choria_aaasvc::config
+#### Parameters
 
-Configures the Choria Server
+The following parameters are available in the `choria_aaasvc::client` class.
 
-### choria_aaasvc::install
+##### `config`
 
-Installs the `choria-aaasvc` package
+Data type: `Hash`
 
-### choria_aaasvc::service
 
-Manages the `aaasvc` service
 

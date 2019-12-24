@@ -1,6 +1,7 @@
 # @summary Configures the Choria Server
 #
 # @private
+# @api private
 class choria_aaasvc::config {
   assert_private()
 

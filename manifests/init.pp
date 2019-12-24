@@ -1,8 +1,8 @@
 # @summary Installs, configures and manages the Choria AAA system
 #
-# @param config_file The main choria AAA configuration file
-# @param choria_config_file The AAA svc choria config file
-# @param config The configuration for AAA svc
+# @param config_file Absolute path to the main choria AAA configuration file
+# @param choria_config_file Absolute path to the AAA svc choria config file
+# @param config The main configuration for AAA svc
 # @param choria_config The choria side configuration for AAA svc
 # @param ensure Add or remove the software
 # @param package_name The package to install
@@ -14,6 +14,8 @@
 #
 # @example
 #   include choria_aaasvc
+#
+# @see https://github.com/choria-io/aaasvc
 class choria_aaasvc (
   Stdlib::Compat::Absolute_path $choria_config_file,
   Stdlib::Compat::Absolute_path $config_file,

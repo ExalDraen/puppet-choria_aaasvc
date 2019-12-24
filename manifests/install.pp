@@ -1,6 +1,7 @@
 # @summary Installs the `choria-aaasvc` package
 #
 # @private
+# @api private
 class choria_aaasvc::install {
   assert_private()
 
